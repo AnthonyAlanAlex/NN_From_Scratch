@@ -236,8 +236,8 @@ def combine_parameters(parameters,grad,learn_rate):
 	return parameter_tmp
 
 def learn_self(learn_rate):
+	global parameters
 	for i in range(train_num//batch_size):
-		global parameters
 		if i%100 == 99:
 			print("running batch {}/{}".format(i+1,train_num//batch_size))
 		grad_tmp = train_batch(i,parameters)
